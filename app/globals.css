@@ -1,0 +1,236 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #3e4f3c;
+  --foreground: #f3eee4;
+  --card: rgba(247, 243, 234, 0.07);
+  --card-foreground: #f3eee4;
+  --popover: rgba(247, 243, 234, 0.92);
+  --popover-foreground: #2d382b;
+  --primary: #f3eee4;
+  --primary-foreground: #31402f;
+  --secondary: rgba(247, 243, 234, 0.08);
+  --secondary-foreground: #f3eee4;
+  --muted: rgba(247, 243, 234, 0.06);
+  --muted-foreground: #d7d2c8;
+  --accent: #ece6d8;
+  --accent-foreground: #31402f;
+  --destructive: #8e5c5c;
+  --destructive-foreground: #f7f7f5;
+  --border: rgba(247, 243, 234, 0.12);
+  --input: rgba(247, 243, 234, 0.12);
+  --ring: rgba(247, 243, 234, 0.26);
+  --chart-1: #f3eee4;
+  --chart-2: #d7d2c8;
+  --chart-3: #aeb7a9;
+  --chart-4: #73826f;
+  --chart-5: #596855;
+  --radius: 1.5rem;
+  --sidebar: rgba(247, 243, 234, 0.08);
+  --sidebar-foreground: #f3eee4;
+  --sidebar-primary: #f3eee4;
+  --sidebar-primary-foreground: #31402f;
+  --sidebar-accent: rgba(247, 243, 234, 0.08);
+  --sidebar-accent-foreground: #f3eee4;
+  --sidebar-border: rgba(247, 243, 234, 0.12);
+  --sidebar-ring: rgba(247, 243, 234, 0.26);
+  --success: #6c8065;
+  --success-foreground: #f7f7f5;
+  --warning: #8b7963;
+  --warning-foreground: #f7f7f5;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes soft-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.08), transparent 24%),
+      radial-gradient(circle at 76% 18%, rgba(255, 255, 255, 0.05), transparent 20%),
+      radial-gradient(circle at 68% 72%, rgba(0, 0, 0, 0.08), transparent 26%),
+      radial-gradient(circle at 28% 84%, rgba(0, 0, 0, 0.05), transparent 18%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 42%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.045), transparent 32%),
+      linear-gradient(120deg, #75876a 0%, #65755c 38%, #6d7d62 100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(62, 79, 60, 0.18);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .app-shell {
+    @apply relative min-h-screen;
+    animation: soft-scale 0.55s ease-out both;
+  }
+
+  .page-frame {
+    @apply mx-auto w-full max-w-[1100px] px-6 md:px-10;
+  }
+
+  .editorial-section {
+    @apply relative py-12 md:py-16;
+  }
+
+  .section-kicker {
+    @apply text-[0.72rem] font-medium uppercase tracking-[0.28em] text-muted-foreground;
+  }
+
+  .editorial-title {
+    @apply font-serif text-[3.25rem] leading-[1.18] tracking-[-0.035em] text-foreground;
+  }
+
+  .editorial-subtitle {
+    @apply font-serif text-[2.125rem] leading-[1.22] tracking-[-0.03em] text-foreground;
+  }
+
+  .editorial-copy {
+    @apply max-w-2xl text-[1.125rem] leading-[1.28] text-muted-foreground;
+  }
+
+  .editorial-panel {
+    @apply rounded-[2rem] border border-border/70 bg-card shadow-[0_18px_60px_rgba(0,0,0,0.12)] backdrop-blur-sm;
+  }
+
+  .editorial-panel-hover {
+    @apply transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(62,79,60,0.12)];
+  }
+
+  .stripe-panel {
+    @apply bg-white/8 backdrop-blur-sm;
+  }
+
+  .stripe-panel-soft {
+    @apply bg-white/6 backdrop-blur-sm;
+  }
+
+  .fade-in-section {
+    animation: fade-up 0.7s ease-out both;
+  }
+
+  .fade-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .fade-delay-2 {
+    animation-delay: 0.16s;
+  }
+
+  .fade-delay-3 {
+    animation-delay: 0.24s;
+  }
+
+  .paper-grid {
+    background-image: linear-gradient(rgba(62, 79, 60, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(62, 79, 60, 0.04) 1px, transparent 1px);
+    background-position: center;
+    background-size: 28px 28px;
+  }
+
+  .quiet-link {
+    @apply transition-colors duration-300 hover:text-foreground;
+  }
+
+  .report-surface {
+    @apply rounded-[2.25rem] border border-border/70 bg-card shadow-[0_22px_70px_rgba(0,0,0,0.16)];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .app-shell,
+  .fade-in-section {
+    animation: none;
+  }
+
+  .editorial-panel-hover {
+    transition: none;
+  }
+}

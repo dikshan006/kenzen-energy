@@ -1,0 +1,8 @@
+Regional Utility
+Billing Period: Mar 01, 2026 - Mar 31, 2026
+Total Amount Due: $450.00
+
+Total kWh Usage: 0 kWh
+Peak Demand: 1405 kW
+Demand Charge: $520.00
+Delivery Charges: $180.00

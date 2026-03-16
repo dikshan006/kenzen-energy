@@ -1,0 +1,9 @@
+Metro Power & Light
+Service Period 02/01/2026 - 02/28/2026
+Amount Due $1,268.90
+
+Energy Usage 8,950 kWh
+Maximum Demand 122 kW
+Generation Charges $634.10
+Distribution Charges $301.50
+Sales Tax $22.40

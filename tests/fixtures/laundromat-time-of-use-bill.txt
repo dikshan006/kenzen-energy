@@ -1,0 +1,15 @@
+Kenzen Electric Utility
+Account Number 1002345
+Billing Period: Jan 01, 2026 - Jan 31, 2026
+Total Amount Due: $2,184.52
+
+Total kWh Usage: 12,480 kWh
+Peak Demand: 184 kW
+On-Peak Usage: 4,820 kWh
+Off-Peak Usage: 7,660 kWh
+On-Peak Hours: Mon-Fri 1:00 PM - 7:00 PM
+
+Supply Charges: $1,104.11
+Delivery Charges: $498.26
+Demand Charge: $582.00
+Taxes and Fees: $48.15
